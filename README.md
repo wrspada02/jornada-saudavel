@@ -10,12 +10,15 @@ https://www.figma.com/design/HRysgOxbEqarXepZ9IsfPU/Extens%C3%A3o-Nutricionista?
 
 ## Modelos do sistema
 Entidade relacionamento
+
 ![image](https://github.com/wrspada02/jornada-saudavel/assets/90157791/a7c915ba-7783-4341-9e47-b8d1f12cc5e6)
 
 Diagrama fluxo de dados lógico
+
 ![image](https://github.com/wrspada02/jornada-saudavel/assets/90157791/6bbed79b-d8b0-44ae-9144-c631f60d74b7)
 
 Arquitetura do sistema
+
 ![image](https://github.com/wrspada02/jornada-saudavel/assets/90157791/d3510449-fcff-48f7-9ffa-bcaf93f90a13)
 
 
