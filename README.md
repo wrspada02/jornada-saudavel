@@ -6,6 +6,7 @@ A motivação para o desenvolvimento do projeto “Jornada Saudável” surge da
 
 ## Protótipo Figma
 https://www.figma.com/design/HRysgOxbEqarXepZ9IsfPU/Extens%C3%A3o-Nutricionista?node-id=0-1&t=qUnIJ75p1WWjsyM4-1
+
 ![image](https://github.com/wrspada02/jornada-saudavel/assets/90157791/bc5337f9-50f6-4d93-abe5-4e311c110a32)
 
 ## Modelos do sistema
