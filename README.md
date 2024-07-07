@@ -23,7 +23,7 @@ Arquitetura do sistema
 
 
 ## Observações
-Este projeto foi desenvolvido em metodologia em cascata, criando, em um primeiro momento, a documentação do projeto, depois a prototipação e finalmente a codificação, testes e implantação.
+Este projeto foi desenvolvido em metodologia cascata, criando, em um primeiro momento, a documentação do projeto, logo, a prototipação e finalmente testes, codificação e implantação.
 
 ## Tecnologias
 React, Next.js e Typescript.
