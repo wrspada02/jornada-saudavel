@@ -2,7 +2,14 @@
 
 ## Objetivo deste repositório
 
-A motivação para o desenvolvimento do projeto “Jornada Saudável” surge da necessidade de uma ferramenta que auxilie as pessoas a encontrar um equilíbrio entre suas atividades diárias e a manutenção de uma vida saudável. Com o aumento da conscientização sobre a importância de uma boa alimentação e prática de exercícios físicos, surge a demanda por soluções tecnológicas que proporcionem suporte e orientação de maneira acessível e eficaz.
+A priori, o desenvolvimento deste projeto leva em consideração a solicitação da avaliação do segundo semestre de análise e desenvolvimento de sistemas do IFSP na disciplina de Engenharia de Software.
+	
+Além disso, o projeto tem como objetivo principal auxiliar o trabalho e também o início de carreira de nutricionistas recém formados ou mesmo já atuantes na área. O site a ser desenvolvido tem como base servir para o nutricionista captar clientes e oferecer seus serviços, com divulgação de posts  informativos e informações de área de atuação dentro do ramo para potenciais clientes entrarem em contato e formar uma cartela de clientes.
+	
+A ideia surge a partir de uma plataforma que faça a ponte de interação entre as pessoas e nutricionistas, que pode ajudar as pessoas a terem um acompanhamento de um profissional para auxiliar na saúde alimentar e alcançar seus objetivos pessoais.
+
+O foco da plataforma é facilitar o contato de possíveis clientes com nutricionistas atuantes ou iniciantes na área de forma prática, com especialidades já desejadas pelo cliente ou em que planos de saúde os nutricionistas atendem, além de já encontrar conteúdo sobre saúde e nutrição na própria plataforma.
+
 
 ## Protótipo Figma
 https://www.figma.com/design/HRysgOxbEqarXepZ9IsfPU/Extens%C3%A3o-Nutricionista?node-id=0-1&t=qUnIJ75p1WWjsyM4-1
