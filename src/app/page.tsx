@@ -18,6 +18,7 @@ export default function Home() {
             <PostCard />
             <PostCard />
           </ul>
+          <footer className="text-base font-medium text-right my-4">Veja mais...</footer>
         </section>
         <section>
           <h2 className="font-bold text-xl text-center mb-14 mt-12">Conheça nossos especialistas</h2>
@@ -25,38 +26,38 @@ export default function Home() {
             <Image src={'/arrow-left.svg'} width={20} height={20} alt="Flecha de navegação à esquerda." />
             <div className="max-w-[70%] overflow-hidden">
               <ul className="flex items-center justify-center gap-9 flex-1">
-                <li>
+                <li className="min-w-16">
                   <figure>
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </li>
-                <li>
-                  <figure>
+                <li className="min-w-16">
+                  <figure className="flex flex-col justify-center items-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </li>
-                <li>
-                  <figure>
+                <li className="min-w-16">
+                  <figure className="flex flex-col justify-center items-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </li>
-                <li>
-                  <figure>
+                <li className="min-w-16">
+                  <figure className="flex flex-col justify-center items-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </li>
-                <li>
-                  <figure>
+                <li className="min-w-16">
+                  <figure className="flex flex-col justify-center items-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </li>
-                <li>
-                  <figure>
+                <li className="min-w-16">
+                  <figure className="flex flex-col justify-center items-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
