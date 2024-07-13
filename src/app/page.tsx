@@ -7,16 +7,25 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="px-3 py-6">
+      <main className="px-3 py-6 bg-[#FDFDFD]">
         <section>
           <h1 className="text-xl font-bold">Confira o que os nutricionistas estão postando</h1>
           <ul className="py-3">
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
+            <li>
+              <PostCard />
+            </li>
+            <li>
+              <PostCard />
+            </li>
+            <li>
+              <PostCard />
+            </li>
+            <li>
+              <PostCard />
+            </li>
+            <li>
+              <PostCard />
+            </li>
           </ul>
           <footer className="text-base font-medium text-right my-4">Veja mais...</footer>
         </section>
