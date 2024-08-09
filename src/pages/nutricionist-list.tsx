@@ -12,7 +12,7 @@ export default function NutricionistList() {
             <section className="px-3 py-6 bg-[#FDFDFD]">
                 <h1 className="font-bold text-xl mb-6">Nutricionistas</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -21,7 +21,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -30,7 +30,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -39,7 +39,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -48,7 +48,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -57,7 +57,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -66,7 +66,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -75,7 +75,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>
@@ -84,7 +84,7 @@ export default function NutricionistList() {
                             </figcaption>
                         </figure>
                     </li>
-                    <li className="mt-7 cursor-pointer">
+                    <li className="mt-7 cursor-pointer w-fit">
                         <figure className="flex items-center gap-x-3">
                             <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                             <figcaption>

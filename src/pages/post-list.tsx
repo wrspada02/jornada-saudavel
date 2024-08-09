@@ -11,37 +11,37 @@ export default function PostList() {
             <section className="px-3 py-6 bg-[#FDFDFD]">
                 <h1 className="font-bold text-xl mb-6">Publicações</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
-                    <li className="cursor-pointer">
+                    <li className="cursor-pointer w-fit">
                         <PostCard />
                     </li>
                 </ul>
