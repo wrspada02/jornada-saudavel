@@ -7,15 +7,15 @@ export function Header() {
     return isOpenHeaderMobile ? (
             <header className="w-screen h-screen bg-mobileHeader p-3 fixed top-0 left-0 z-10 animate-opacity-entrance">
                 <nav className="text-black">
-                    <ul className="flex items-end flex-col gap-5">
+                    <ul className="flex items-end flex-col gap-9">
                         <button onClick={() => {
                             setIsOpenHeaderMobile(false);
                         }}>
                             <li className="font-semibold text-3xl cursor-pointer">X</li>
                         </button>
-                        <li className="font-semibold text-xl cursor-pointer">Home</li>
-                        <li className="font-semibold text-xl cursor-pointer">Publicações</li>
-                        <li className="font-semibold text-xl cursor-pointer">Nutricionistas</li>
+                        <li className="font-semibold text-2xl cursor-pointer">Home</li>
+                        <li className="font-semibold text-2xl cursor-pointer">Publicações</li>
+                        <li className="font-semibold text-2xl cursor-pointer">Nutricionistas</li>
                     </ul>
                 </nav>
             </header>
