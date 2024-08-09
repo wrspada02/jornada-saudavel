@@ -33,42 +33,41 @@ export default function Home() {
         <section>
           <h2 className="font-bold text-xl text-center mb-14 mt-12">Conheça nossos especialistas</h2>
           <article className="flex items-center justify-center gap-x-8 overflow-x-hidden">
-            <div className="max-w-[70%] overflow-hidden">
             <Carousel opts={{
               align: 'start'
             }}>
               <CarouselContent>
-                <CarouselItem className="basis-1/3">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="basis-1/3">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="basis-1/3">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="basis-1/3">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="basis-1/3">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="basis-1/3">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
@@ -78,7 +77,6 @@ export default function Home() {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
-            </div>
           </article>
         </section>
       </main>
