@@ -21,7 +21,7 @@ export function Header() {
             </header>
         ) : (
             <header className="flex items-center justify-between p-3 tablet:p-5 desktop:p-6 bg-[#C3E9D2]">
-                <Image src={'/logo.svg'} width={30} height={30} alt="Logo jornada saudável, uma imagem cartoon colorida de um copo de água com detalhes em branco e a água quase até a borda do copo, cheio, na cor azul." />
+                <Image src={'/logo-jornada-saudavel.jpeg'} className="rounded-full" width={40} height={40} alt="Logo jornada saudável, uma imagem cartoon colorida de um copo de água com detalhes em branco e a água quase até a borda do copo, cheio, na cor azul." />
                 <nav>
                     <ul className="flex items-center gap-x-5">
                         <li className="mobile:block hidden">
