@@ -5,11 +5,11 @@ import React from "react";
 
 export default function PostList() {
     return (
-        <>
+        <main className="h-screen overflow-hidden">
             <Header />
-            <main className="px-3 py-6 bg-[#FDFDFD]">
+            <section className="px-3 py-6 bg-[#FDFDFD]">
                 <h1 className="font-bold text-xl mb-6">Publicações</h1>
-                <ul className="max-h-[78vh] overflow-auto">
+                <ul className="overflow-auto h-[calc(73.5dvh)]">
                     <li>
                         <PostCard />
                     </li>
@@ -32,8 +32,8 @@ export default function PostList() {
                         <PostCard />
                     </li>
                 </ul>
-            </main>
+            </section>
             <Footer />
-        </>
+        </main>
     );
 }
