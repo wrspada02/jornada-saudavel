@@ -28,7 +28,7 @@ export default function Home() {
               <PostCard />
             </li>
           </ul>
-          <footer className="text-base font-medium text-right my-4">Veja mais...</footer>
+          <footer className="text-base font-medium text-left mobile:text-right my-4">Veja mais...</footer>
         </section>
         <section>
           <h2 className="font-bold text-xl text-center mb-14 mt-12">Conheça nossos especialistas</h2>
