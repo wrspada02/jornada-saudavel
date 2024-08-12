@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { PostCard } from "@/components/PostCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,7 +29,9 @@ export default function Home() {
               <PostCard />
             </li>
           </ul>
-          <footer className="text-base font-medium text-left mobile:text-right my-4">Veja mais...</footer>
+          <footer className="text-base font-medium text-left mobile:text-right my-4">
+            <Link href={'/post-list'}>Veja mais...</Link>
+          </footer>
         </section>
         <section>
           <h2 className="font-bold text-xl text-center mb-14 mt-12">Conheça nossos especialistas</h2>
@@ -37,37 +40,37 @@ export default function Home() {
               align: 'start'
             }}>
               <CarouselContent>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
