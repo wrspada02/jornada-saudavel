@@ -28,11 +28,12 @@ model Usuario {
   tipo_atividade       String
   altura               Float?
   peso                 Float?
+  imagem_url           String?               @default("https://archive.org/download/placeholder-image/placeholder-image.jpg")
   frequencia_atividade Int?
   objetivo             ObjetivoEspecialidade @relation(fields: [objetivo_id], references: [id])
   objetivo_id          String
-  Seguidor             Seguidor[]
-  Comentario           Comentario?
+  seguidor             Seguidor[]
+  comentario           Comentario?
 }
 
 model Nutricionista {
@@ -41,42 +42,43 @@ model Nutricionista {
   nome             String
   sobre            String
   data_nasc        DateTime
+  imagem_url       String?               @default("https://archive.org/download/placeholder-image/placeholder-image.jpg")
   tempo_exp        Int
   especialidade    ObjetivoEspecialidade @relation(fields: [especialidade_id], references: [id])
   especialidade_id String
-  Seguidor         Seguidor[]
-  Post             Post[]
+  seguidores       Seguidor[]
+  post             Post[]
 }
 
 model Seguidor {
-  usuario         Usuario       @relation(fields: [usuarioId], references: [id])
-  usuarioId       String
-  nutricionista   Nutricionista @relation(fields: [nutricionistaId], references: [id])
-  nutricionistaId String
+  usuario          Usuario       @relation(fields: [usuario_id], references: [id])
+  usuario_id       String
+  nutricionista    Nutricionista @relation(fields: [nutricionista_id], references: [id])
+  nutricionista_id String
 
-  @@id([usuarioId, nutricionistaId])
+  @@id([usuario_id, nutricionista_id])
 }
 
 model Post {
-  id              String        @id @default(uuid())
-  tipo            Int
-  titulo          String
-  subtitulo       String
-  conteudo        String
-  data_publicacao DateTime
-  imagem          String?
-  qtd_likes       Int
-  qtd_comentarios Int
-  nutricionista   Nutricionista @relation(fields: [nutricionistaId], references: [id])
-  nutricionistaId String
-  Comentario      Comentario[]
+  id               String        @id @default(uuid())
+  tipo             Int
+  titulo           String
+  subtitulo        String
+  conteudo         String
+  data_publicacao  DateTime
+  imagem_url       String?       @default("https://archive.org/download/placeholder-image/placeholder-image.jpg")
+  qtd_likes        Int
+  qtd_comentarios  Int
+  nutricionista    Nutricionista @relation(fields: [nutricionista_id], references: [id])
+  nutricionista_id String
+  comentarios      Comentario[]
 }
 
 model Comentario {
-  id        String  @id @default(uuid())
-  conteudo  String
-  post      Post    @relation(fields: [postId], references: [id])
-  postId    String
-  usuario   Usuario @relation(fields: [usuarioId], references: [id])
-  usuarioId String @unique
+  id         String  @id @default(uuid())
+  conteudo   String
+  post       Post    @relation(fields: [post_id], references: [id])
+  post_id    String
+  usuario    Usuario @relation(fields: [usuario_id], references: [id])
+  usuario_id String  @unique
 }
