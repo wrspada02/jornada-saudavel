@@ -9,7 +9,7 @@ export function Header() {
             <header className="w-screen h-screen bg-mobileHeader p-3 fixed top-0 left-0 z-10 animate-opacity-entrance">
                 <nav className="text-black">
                     <ul className="flex items-end flex-col gap-9">
-                        <li>
+                        <li className="hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
                             <button 
                                 onClick={() => {
                                     setIsOpenHeaderMobile(false);
@@ -19,13 +19,13 @@ export function Header() {
                                 X
                             </button>
                         </li>
-                        <li className="font-semibold text-2xl cursor-pointer">
+                        <li className="font-semibold text-2xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
                             <Link href={'/'}>Home</Link>
                         </li>
-                        <li className="font-semibold text-2xl cursor-pointer">
+                        <li className="font-semibold text-2xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
                             <Link href={'/post-list'}>Publicações</Link>
                         </li>
-                        <li className="font-semibold text-2xl cursor-pointer">
+                        <li className="font-semibold text-2xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
                             <Link href={'/nutricionist-list'}>Nutricionistas</Link>
                         </li>
                     </ul>
@@ -36,7 +36,7 @@ export function Header() {
                 <Image src={'/logo.jpeg'} className="rounded-full" width={40} height={40} alt="Logo jornada saudável, uma imagem cartoon colorida de um copo de água com detalhes em branco e a água quase até a borda do copo, cheio, na cor azul." />
                 <nav>
                     <ul className="flex items-center gap-x-5">
-                        <li className="mobile:block hidden">
+                        <li className="mobile:block hidden hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
                             <button 
                                 onClick={() => {
                                     setIsOpenHeaderMobile(true);
@@ -45,13 +45,13 @@ export function Header() {
                             <Image src={'/button_hamburger.svg'} width={30} height={30} alt="Botão hamburguer para abrir o menu de opções do cabeçalho." />
                             </button>
                         </li>
-                        <li className="mobile:hidden font-medium text-xl cursor-pointer">
+                        <li className="mobile:hidden font-medium text-xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
                             <Link href={'/'}>Home</Link>
                         </li>
-                        <li className="mobile:hidden font-medium text-xl cursor-pointer">
+                        <li className="mobile:hidden font-medium text-xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
                             <Link href={'/post-list'}>Publicações</Link>
                         </li>
-                        <li className="mobile:hidden font-medium text-xl cursor-pointer">
+                        <li className="mobile:hidden font-medium text-xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
                             <Link href={'/nutricionist-list'}>Nutricionistas</Link>
                         </li>
                     </ul>

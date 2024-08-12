@@ -76,6 +76,10 @@ const config = {
           from: { transform: 'translateY(-50px)' },
           to: { transform: 'translateY(0)' },
         },
+        "header-nav": {
+          from: { width: "0" },
+          to: { width: "100%" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -83,6 +87,7 @@ const config = {
         "opacity-entrance": "opacity-entrance 0.5s ease-in-out",
         "opacity-exit": "opacity-exit 0.5s ease-in-out",
         "roll-down": "roll-down 0.5s ease-in-out",
+        "header-nav": "header-nav 0.5s ease-in-out",
       },
       screens: {
         "mobile": {
