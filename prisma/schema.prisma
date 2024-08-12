@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model ObjetivoEspecialidade {
+  id            String          @id @default(uuid())
+  nome          String
+  usuarios      Usuario[]
+  Nutricionista Nutricionista[]
+}
+
+model Usuario {
+  id                   String                @id @default(uuid())
+  nome                 String
+  data_nasc            DateTime
+  tipo_atividade       String
+  altura               Float?
+  peso                 Float?
+  frequencia_atividade Int?
+  objetivo             ObjetivoEspecialidade @relation(fields: [objetivo_id], references: [id])
+  objetivo_id          String
+  Seguidor             Seguidor[]
+  Comentario           Comentario?
+}
+
+model Nutricionista {
+  id               String                @id @default(uuid())
+  crn              String
+  nome             String
+  sobre            String
+  data_nasc        DateTime
+  tempo_exp        Int
+  especialidade    ObjetivoEspecialidade @relation(fields: [especialidade_id], references: [id])
+  especialidade_id String
+  Seguidor         Seguidor[]
+  Post             Post[]
+}
+
+model Seguidor {
+  usuario         Usuario       @relation(fields: [usuarioId], references: [id])
+  usuarioId       String
+  nutricionista   Nutricionista @relation(fields: [nutricionistaId], references: [id])
+  nutricionistaId String
+
+  @@id([usuarioId, nutricionistaId])
+}
+
+model Post {
+  id              String        @id @default(uuid())
+  tipo            Int
+  titulo          String
+  subtitulo       String
+  conteudo        String
+  data_publicacao DateTime
+  imagem          String?
+  qtd_likes       Int
+  qtd_comentarios Int
+  nutricionista   Nutricionista @relation(fields: [nutricionistaId], references: [id])
+  nutricionistaId String
+  Comentario      Comentario[]
+}
+
+model Comentario {
+  id        String  @id @default(uuid())
+  conteudo  String
+  post      Post    @relation(fields: [postId], references: [id])
+  postId    String
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId String @unique
+}
