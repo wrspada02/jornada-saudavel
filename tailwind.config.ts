@@ -72,12 +72,17 @@ const config = {
           from: { opacity: "1" },
           to: { opacity: "0" },
         },
+        "roll-down": {
+          from: { transform: 'translateY(-50px)' },
+          to: { transform: 'translateY(0)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "opacity-entrance": "opacity-entrance 0.5s ease-in-out",
         "opacity-exit": "opacity-exit 0.5s ease-in-out",
+        "roll-down": "roll-down 0.5s ease-in-out",
       },
       screens: {
         "mobile": {
