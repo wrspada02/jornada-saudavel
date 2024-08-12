@@ -1,8 +1,8 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Pagination } from "@/components/Pagination";
-import { PostCard } from "@/components/PostCard";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function NutricionistList() {
@@ -13,85 +13,103 @@ export default function NutricionistList() {
                 <h1 className="font-bold text-xl mb-6">Nutricionistas</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
-                        <figure className="flex items-center gap-x-3">
-                            <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                            <figcaption>
-                                <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
-                                <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
-                            </figcaption>
-                        </figure>
+                        <Link href={'/'}>
+                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                <figcaption>
+                                    <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
+                                    <p className="mt-1 text-sm max-w-lg">Formada em nutrição em 2015, especializada em perca de peso pela USP, hoje Raquel contabiliza e auxilia mais de 100 clientes mensalmente.</p>
+                                </figcaption>
+                            </figure>
+                        </Link>
                     </li>
                 </ul>
             </section>
