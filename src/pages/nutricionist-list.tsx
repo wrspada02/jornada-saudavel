@@ -10,11 +10,11 @@ export default function NutricionistList() {
         <main className="h-screen overflow-hidden">
             <Header />
             <section className="px-3 py-6 bg-[#FDFDFD]">
-                <h1 className="font-bold text-xl mb-6">Nutricionistas</h1>
+                <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -25,7 +25,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -36,7 +36,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -47,7 +47,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -58,7 +58,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -69,7 +69,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -80,7 +80,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -91,7 +91,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>
@@ -102,7 +102,7 @@ export default function NutricionistList() {
                     </li>
                     <li className="mt-7 cursor-pointer w-fit">
                         <Link href={'/'}>
-                            <figure className="flex items-center gap-x-3 w-fit pl-2 p-5 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                            <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                 <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                 <figcaption>
                                     <h3 className="font-medium text-base">Raquel de Oliveira Santos</h3>

@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <main className="px-3 py-6 bg-[#FDFDFD]">
         <section>
-          <h1 className="text-xl font-bold">Confira o que os nutricionistas estão postando</h1>
+          <h1 className="text-xl font-bold pl-3">Confira o que os nutricionistas estão postando</h1>
           <ul className="py-3">
             <li>
               <PostCard />
@@ -29,7 +29,7 @@ export default function Home() {
               <PostCard />
             </li>
           </ul>
-          <footer className="text-base font-medium text-left mobile:text-right my-4">
+          <footer className="text-base font-medium text-left mobile:text-right my-4 pl-3">
             <Link href={'/post-list'}>Veja mais...</Link>
           </footer>
         </section>
@@ -39,38 +39,38 @@ export default function Home() {
             <Carousel opts={{
               align: 'start'
             }}>
-              <CarouselContent>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
+              <CarouselContent className="p-5">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
                   </figure>
                 </CarouselItem>
-                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer">
+                <CarouselItem className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                   <figure className="flex flex-col items-center justify-center">
                     <Image src='/nutricionista_imagem.jpeg' width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                     <figcaption className="font-medium text-sm text-center">Raquel</figcaption>
