@@ -1,22 +1,22 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Pagination } from "@/components/Pagination";
 import prisma from "@/lib/prisma";
-import { useSearchParams } from "next/navigation";
 
 interface NutricionistListProps {
     nutricionistCount: number;
 }
 
-export const getStaticProps = (async (context) => {
+export const getStaticProps = (async () => {
     const nutricionistCount = await prisma.nutricionista.count();
   
     return { props: { nutricionistCount }};
-  }) satisfies GetStaticProps<NutricionistListProps>;
+}) satisfies GetStaticProps<NutricionistListProps>;
 
 export default function NutricionistList({ nutricionistCount }: InferGetStaticPropsType<typeof getStaticProps>) {
     const queryParam = useSearchParams();

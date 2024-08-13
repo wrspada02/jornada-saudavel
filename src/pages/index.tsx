@@ -9,8 +9,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import prisma from "@/lib/prisma";
 
 interface HomePageProps {
-  posts: Post;
-  nutricionists: Nutricionista;
+  posts: Post[];
+  nutricionists: Nutricionista[];
 }
 
 export const getStaticProps = (async (context) => {
