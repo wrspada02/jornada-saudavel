@@ -1,11 +1,30 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Pagination } from "@/components/Pagination";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import prisma from "@/lib/prisma";
+import { useSearchParams } from "next/navigation";
 
-export default function NutricionistList() {
+interface NutricionistListProps {
+    nutricionistCount: number;
+}
+
+export const getStaticProps = (async (context) => {
+    const nutricionistCount = await prisma.nutricionista.count();
+  
+    return { props: { nutricionistCount }};
+  }) satisfies GetStaticProps<NutricionistListProps>;
+
+export default function NutricionistList({ nutricionistCount }: InferGetStaticPropsType<typeof getStaticProps>) {
+    const queryParam = useSearchParams();
+
+    useEffect(() => {
+        console.log(queryParam?.get('offset'));
+    }, [queryParam]);
+
     return (
         <main className="h-screen overflow-hidden">
             <Header />
@@ -113,7 +132,7 @@ export default function NutricionistList() {
                     </li>
                 </ul>
             </section>
-            <Pagination />
+            <Pagination count={nutricionistCount} />
             <Footer />
         </main>
     );

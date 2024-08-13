@@ -28,7 +28,7 @@ export const getStaticProps = (async (context) => {
     ]
   );
 
-  return { props: { posts: JSON.parse(JSON.stringify(posts)), nutricionists: JSON.parse(JSON.stringify(nutricionists)) } };
+  return { props: { posts: JSON.parse(JSON.stringify(posts)) as Post[], nutricionists: JSON.parse(JSON.stringify(nutricionists)) as Nutricionista[] } };
 }) satisfies GetStaticProps<HomePageProps>;
 
 export default function Home({ nutricionists, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -39,7 +39,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
         <section>
           <h1 className="text-xl font-bold pl-3">Confira o que os nutricionistas estão postando</h1>
           <ul className="py-3">
-            {posts.map((p: Post) => (
+            {posts.map(p => (
               <li key={p.id}>
                 <PostCard post={p} />
               </li>
@@ -56,7 +56,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
               align: 'start'
             }}>
               <CarouselContent className="p-5">
-                {nutricionists.map((n: Nutricionista) => (
+                {nutricionists.map(n => (
                   <CarouselItem key={n.id} className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                     <figure className="flex flex-col items-center justify-center">
                       <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
