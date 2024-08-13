@@ -14,7 +14,14 @@ interface NutricionistListProps {
     nutricionistCount: number;
 }
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url, {
+    method:'GET',
+    headers:{ "Content-Type" : "applicaton/json" },
+}).then(async res => {
+    const { nutricionists } = await res.json();
+
+    return nutricionists;
+});
 
 export const getStaticProps = (async () => {
     const nutricionistCount = await prisma.nutricionista.count();
@@ -24,12 +31,8 @@ export const getStaticProps = (async () => {
 
 export default function NutricionistList({ nutricionistCount }: InferGetStaticPropsType<typeof getStaticProps>) {
     const queryParam = useSearchParams();
-    const { data: nutricionists, error, isLoading, mutate } = useSWR<Nutricionista[]>
+    const { data, error, isLoading, mutate } = useSWR<Nutricionista[]>
         (`/api/nutricionists?offset=${queryParam?.get('offset') || 0}`, fetcher);
-
-    useEffect(() => {
-        console.log(error)
-    }, [error]);
 
     return (
         <main className="h-screen overflow-hidden">
@@ -37,8 +40,8 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
             <section className="px-3 py-6 bg-[#FDFDFD]">
                 <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
-                    {nutricionists?.map(n => (
-                        <li key={n.id} className="mt-7 cursor-pointer w-fit">
+                    {data?.map(n => (
+                        <li key={n.id} className="mt-7 cursor-pointer w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words">
                             <Link href={`/nutricionist/${n.id}`}>
                                 <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                     <Image src={n.imagem_url || ''} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />

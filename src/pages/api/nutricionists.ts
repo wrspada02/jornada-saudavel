@@ -18,8 +18,6 @@ export default async function handler(
       take: ITEMS_PER_PAGE,
     });
 
-    console.log(nutricionists);
-
     res.status(200).json({ nutricionists });
   } catch (e: unknown) {
     res.status(500);
