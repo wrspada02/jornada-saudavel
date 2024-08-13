@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "./ui/pagination";
 import { useSearchParams } from "next/navigation";
+import { ITEMS_PER_PAGE } from "@/global/pagination";
 
 interface PaginationProps {
   count: number;
@@ -8,7 +9,6 @@ interface PaginationProps {
 
 export function Pagination({ count }: PaginationProps) {
   const queryParams = useSearchParams();
-  const ITEMS_PER_PAGE = 5;
   const PAGES = count / ITEMS_PER_PAGE;
 
   return (
