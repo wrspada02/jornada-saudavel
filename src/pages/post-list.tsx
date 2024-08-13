@@ -9,7 +9,7 @@ export default function PostList() {
         <main className="h-screen overflow-hidden">
             <Header />
             <section className="px-3 py-6 bg-[#FDFDFD]">
-                <h1 className="font-bold text-xl mb-6">Publicações</h1>
+                <h1 className="font-bold text-xl mb-6 pl-3">Publicações</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
                     <li className="cursor-pointer w-fit">
                         <PostCard />
