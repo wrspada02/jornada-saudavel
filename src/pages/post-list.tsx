@@ -12,41 +12,41 @@ export default function PostList() {
                 <h1 className="font-bold text-xl mb-6 pl-3">Publicações</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                     <li className="cursor-pointer w-fit">
-                        <PostCard />
+                        <PostCard post={{} as any} />
                     </li>
                 </ul>
             </section>
-            <Pagination />
+            <Pagination count={0} />
             <Footer />
         </main>
     );
