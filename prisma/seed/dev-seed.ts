@@ -27,19 +27,19 @@ const main = async () => {
                 data_publicacao: faker.date.past(10),
                 qtd_comentarios: faker.number.int({ min: 1, max: 5 }),
                 qtd_likes: faker.number.int({ min: 1, max: 5 }),
-                subtitulo: faker.string.alpha(),
+                subtitulo: faker.string.alpha({ length: 100 }),
                 tipo: faker.number.int({ min: 1, max: 2 }),
-                titulo: faker.string.alpha(),
+                titulo: faker.string.alpha({ length: 200 }),
                 nutricionista: {
                   create: {
-                    crn: faker.string.alphanumeric(),
+                    crn: faker.string.alphanumeric({ length: 300 }),
                     data_nasc: faker.date.past(20),
                     nome: faker.person.fullName(),
                     sobre: faker.string.alpha({ length: 300 }),
                     tempo_exp: faker.number.int({ min: 1, max: 5 }),
                     especialidade: {
                       create: {
-                        nome: faker.string.alpha(),
+                        nome: faker.string.alpha({ length: 50 }),
                       }
                     }
                   }
@@ -50,7 +50,7 @@ const main = async () => {
         },
         objetivo: {
           create: {
-            nome: faker.string.alpha(),
+            nome: faker.string.alpha({ length: 50 }),
           }
         }
       },
