@@ -9,6 +9,8 @@ import { Pagination } from "@/components/Pagination";
 import prisma from "@/lib/prisma";
 import useSWR from "swr";
 import { Nutricionista } from "@prisma/client";
+import { ITEMS_PER_PAGE } from "@/global/pagination";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface NutricionistListProps {
     nutricionistCount: number;
@@ -31,7 +33,7 @@ export const getStaticProps = (async () => {
 
 export default function NutricionistList({ nutricionistCount }: InferGetStaticPropsType<typeof getStaticProps>) {
     const queryParam = useSearchParams();
-    const { data, error, isLoading, mutate } = useSWR<Nutricionista[]>
+    const { data, error, isLoading } = useSWR<Nutricionista[]>
         (`/api/nutricionists?offset=${queryParam?.get('offset') || 0}`, fetcher);
 
     return (
@@ -40,7 +42,9 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
             <section className="px-3 py-6 bg-[#FDFDFD]">
                 <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
-                    {data?.map(n => (
+                    {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map(_ => (
+                        <Skeleton className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
+                    )) : data?.map(n => (
                         <li key={n.id} className="mt-7 cursor-pointer w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words">
                             <Link href={`/nutricionist/${n.id}`}>
                                 <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
