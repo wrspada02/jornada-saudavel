@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -30,16 +30,16 @@ export const getStaticProps = (async () => {
     return { props: { postCount }};
 }) satisfies GetStaticProps<PostListProps>;
 
-export default function PostList() {
+export default function PostList({ postCount }: InferGetStaticPropsType<typeof getStaticProps>) {
     const queryParam = useSearchParams();
     const { data, error, isLoading } = useSWR<Post[]>
         (`/api/posts?offset=${queryParam?.get('offset') || 0}`, fetcher);
     return (
-        <main className="h-screen overflow-hidden">
+        <main className="flex flex-col overflow-hidden">
             <Header />
-            <section className="px-3 py-6 bg-[#FDFDFD]">
+            <section className="px-3 py-6 bg-[#FDFDFD] flex-1">
                 <h1 className="font-bold text-xl mb-6 pl-3">Publicações</h1>
-                <ul className="overflow-auto h-[calc(69dvh)]">
+                <ul className="overflow-auto break-all min-h-[75vh]">
                 {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
                         <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
                     )) : data?.map(p => (
@@ -49,7 +49,7 @@ export default function PostList() {
                     ))}
                 </ul>
             </section>
-            <Pagination count={0} />
+            <Pagination count={postCount} />
             <Footer />
         </main>
     );

@@ -37,11 +37,11 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
         (`/api/nutricionists?offset=${queryParam?.get('offset') || 0}`, fetcher);
 
     return (
-        <main className="h-screen overflow-hidden">
+        <main className="flex flex-col overflow-hidden">
             <Header />
-            <section className="px-3 py-6 bg-[#FDFDFD]">
+            <section className="px-3 py-6 bg-[#FDFDFD] flex-1">
                 <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
-                <ul className="overflow-auto h-[calc(69dvh)]">
+                <ul className="overflow-auto break-all min-h-[75vh]">
                     {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
                         <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
                     )) : data?.map(n => (
