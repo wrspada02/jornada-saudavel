@@ -35,19 +35,25 @@ export default function PostList({ postCount }: InferGetStaticPropsType<typeof g
     const { data, error, isLoading } = useSWR<Post[]>
         (`/api/posts?offset=${queryParam?.get('offset') || 0}`, fetcher);
     return (
-        <main className="flex flex-col overflow-hidden">
+        <main className="flex flex-col h-screen">
             <Header />
             <section className="px-3 py-6 bg-[#FDFDFD] flex-1">
-                <h1 className="font-bold text-xl mb-6 pl-3">Publicações</h1>
-                <ul className="overflow-auto break-all min-h-[75vh]">
-                {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
-                        <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
-                    )) : data?.map(p => (
-                        <li key={p.id} className="cursor-pointer w-fit">
-                            <PostCard post={p} />
-                        </li>
-                    ))}
-                </ul>
+                {error ? (
+                    <h1 className="py-5 text-center text-lg">We are sorry. We could not load the data</h1>
+                ) : (
+                    <>
+                        <h1 className="font-bold text-xl mb-6 pl-3">Publicações</h1>
+                        <ul className="break-all min-h-[75vh]">
+                        {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                                <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
+                            )) : data?.map(p => (
+                                <li key={p.id} className="cursor-pointer w-fit">
+                                    <PostCard post={p} />
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
             </section>
             <Pagination count={postCount} />
             <Footer />

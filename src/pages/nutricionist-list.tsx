@@ -37,29 +37,35 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
         (`/api/nutricionists?offset=${queryParam?.get('offset') || 0}`, fetcher);
 
     return (
-        <main className="flex flex-col overflow-hidden">
+        <main className="flex flex-col h-screen">
             <Header />
             <section className="px-3 py-6 bg-[#FDFDFD] flex-1">
-                <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
-                <ul className="overflow-auto break-all min-h-[75vh]">
-                    {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
-                        <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
-                    )) : data?.map(n => (
-                        <li key={n.id} className="mt-7 cursor-pointer w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words">
-                            <Link href={`/nutricionist/${n.id}`}>
-                                <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
-                                    <Image src={n.imagem_url || ''} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                                    <figcaption>
-                                        <h3 className="font-medium text-base">{n.nome}</h3>
-                                        <p className="mt-1 text-sm max-w-lg">
-                                            {n.sobre.length > 100 ? n.sobre.substring(0, 100).concat('...') : n.sobre}
-                                        </p>
-                                    </figcaption>
-                                </figure>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                {error ? (
+                    <h1 className="py-5 text-center text-lg">We are sorry. We could not load the data</h1>
+                ) : (
+                    <>
+                        <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
+                        <ul className="overflow-auto break-all min-h-[75vh]">
+                            {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                                <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
+                            )) : data?.map(n => (
+                                <li key={n.id} className="mt-7 cursor-pointer w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words">
+                                    <Link href={`/nutricionist/${n.id}`}>
+                                        <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                            <Image src={n.imagem_url || ''} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                            <figcaption>
+                                                <h3 className="font-medium text-base">{n.nome}</h3>
+                                                <p className="mt-1 text-sm max-w-lg">
+                                                    {n.sobre.length > 100 ? n.sobre.substring(0, 100).concat('...') : n.sobre}
+                                                </p>
+                                            </figcaption>
+                                        </figure>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
             </section>
             <Pagination count={nutricionistCount} />
             <Footer />
