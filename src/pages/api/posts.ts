@@ -1,10 +1,10 @@
 import { ITEMS_PER_PAGE } from "@/global/pagination";
 import prisma from "@/lib/prisma";
-import { Nutricionista } from "@prisma/client"
+import { Post } from "@prisma/client"
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
-  nutricionists: Nutricionista[];
+  posts: Post[];
 }
  
 export default async function handler(
@@ -13,12 +13,12 @@ export default async function handler(
 ) {
   try {
     const { offset } = req.query;
-    const nutricionists = await prisma.nutricionista.findMany({
+    const posts = await prisma.post.findMany({
       skip: parseInt(offset as string) || 0,
       take: ITEMS_PER_PAGE,
     });
 
-    res.status(200).json({ nutricionists });
+    res.status(200).json({ posts });
   } catch (e: unknown) {
     res.status(500);
   }

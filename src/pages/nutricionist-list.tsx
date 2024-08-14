@@ -42,8 +42,8 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
             <section className="px-3 py-6 bg-[#FDFDFD]">
                 <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
                 <ul className="overflow-auto h-[calc(69dvh)]">
-                    {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map(_ => (
-                        <Skeleton className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
+                    {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                        <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
                     )) : data?.map(n => (
                         <li key={n.id} className="mt-7 cursor-pointer w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words">
                             <Link href={`/nutricionist/${n.id}`}>
