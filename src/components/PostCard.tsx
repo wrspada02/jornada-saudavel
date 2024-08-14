@@ -8,7 +8,7 @@ interface PostCardProps {
 export function PostCard({ post }: PostCardProps) {
     return (
         <Link href={'/'}>
-            <div className="w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+            <div className="mobile:w-fit tablet:w-fit w-[600px] max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                 <h2 className="text-lg font-medium">{post.titulo.length > 50 ? post.titulo.substring(0, 50).concat('...') : post.titulo}</h2>
                 <article className="py-1 text-xs text-[#6A6A6A]">
                     <p>{post.subtitulo.length > 50 ? post.subtitulo.substring(0, 50).concat('...') : post.subtitulo}</p>

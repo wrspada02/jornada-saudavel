@@ -47,7 +47,7 @@ export default function PostList({ postCount }: InferGetStaticPropsType<typeof g
                         {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
                                 <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
                             )) : data?.map(p => (
-                                <li key={p.id} className="cursor-pointer w-fit">
+                                <li key={p.id} className="cursor-pointer">
                                     <PostCard post={p} />
                                 </li>
                             ))}
