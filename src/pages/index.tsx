@@ -58,10 +58,12 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
               <CarouselContent className="p-5">
                 {nutricionists.map(n => (
                   <CarouselItem key={n.id} className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
-                    <figure className="flex flex-col items-center justify-center">
-                      <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                      <figcaption className="font-medium text-sm text-center">{n.nome}</figcaption>
-                    </figure>
+                    <Link href={`/nutricionist/${n.id}`}>
+                      <figure className="flex flex-col items-center justify-center">
+                        <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                        <figcaption className="font-medium text-sm text-center">{n.nome}</figcaption>
+                      </figure>
+                    </Link>
                   </CarouselItem>
                 ))}
               </CarouselContent>

@@ -28,7 +28,7 @@ export default function NutricionistProfile({ nutricionist }: InferGetStaticProp
     <main className="flex flex-col h-screen">
       <Header />
       <section className="flex-1 p-3">
-        <figure className="flex items-center justify-between">
+        <figure className="flex items-center gap-x-5 mobile:justify-between tablet:justify-between">
           <figcaption className="text-xl font-bold">
             {nutricionist?.nome}
           </figcaption>
