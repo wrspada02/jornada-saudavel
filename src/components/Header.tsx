@@ -1,4 +1,5 @@
 "use client";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -28,6 +29,11 @@ export function Header() {
                         <li className="font-semibold text-2xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
                             <Link href={'/nutricionist-list'}>Nutricionistas</Link>
                         </li>
+                        <li>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -53,6 +59,11 @@ export function Header() {
                         </li>
                         <li className="mobile:hidden font-medium text-xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
                             <Link href={'/nutricionist-list'}>Nutricionistas</Link>
+                        </li>
+                        <li className="mobile:hidden tablet:hidden">
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
                         </li>
                     </ul>
                 </nav>
