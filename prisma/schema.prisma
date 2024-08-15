@@ -28,6 +28,7 @@ model Usuario {
   tipo_atividade       String
   altura               Float?
   peso                 Float?
+  email                String                @unique
   imagem_url           String?               @default("https://archive.org/download/placeholder-image/placeholder-image.jpg")
   frequencia_atividade Int?
   objetivo             ObjetivoEspecialidade @relation(fields: [objetivo_id], references: [id])
@@ -41,6 +42,7 @@ model Nutricionista {
   crn              String
   nome             String
   sobre            String
+  email            String                @unique
   data_nasc        DateTime
   imagem_url       String?               @default("https://archive.org/download/placeholder-image/placeholder-image.jpg")
   tempo_exp        Int
