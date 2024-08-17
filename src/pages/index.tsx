@@ -46,7 +46,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
             ))}
           </ul>
           <footer className="text-base font-medium text-left mobile:text-right my-4 pl-3">
-            <Link href={'/post-list'}>Veja mais...</Link>
+            <Link href={'/post/list'}>Veja mais...</Link>
           </footer>
         </section>
         <section>

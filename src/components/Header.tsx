@@ -24,10 +24,10 @@ export function Header() {
                             <Link href={'/'}>Home</Link>
                         </li>
                         <li className="font-semibold text-2xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
-                            <Link href={'/post-list'}>Publicações</Link>
+                            <Link href={'/post/list'}>Publicações</Link>
                         </li>
                         <li className="font-semibold text-2xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#C3E9D2] hover:after:animate-header-nav">
-                            <Link href={'/nutricionist-list'}>Nutricionistas</Link>
+                            <Link href={'/nutricionist/list'}>Nutricionistas</Link>
                         </li>
                         <li>
                             <SignedIn>
@@ -55,10 +55,10 @@ export function Header() {
                             <Link href={'/'}>Home</Link>
                         </li>
                         <li className="mobile:hidden font-medium text-xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
-                            <Link href={'/post-list'}>Publicações</Link>
+                            <Link href={'/post/list'}>Publicações</Link>
                         </li>
                         <li className="mobile:hidden font-medium text-xl cursor-pointer hover:after:block hover:after:h-0.5 after:bg-[#FDFDFD] hover:after:animate-header-nav">
-                            <Link href={'/nutricionist-list'}>Nutricionistas</Link>
+                            <Link href={'/nutricionist/list'}>Nutricionistas</Link>
                         </li>
                         <li className="mobile:hidden tablet:hidden">
                             <SignedIn>

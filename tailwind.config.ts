@@ -109,6 +109,7 @@ const config = {
       backgroundImage: {
         mobileHeader: 'linear-gradient(180deg, rgba(253,253,253,1) 64%, rgba(195,233,210,1) 100%)',
         login: 'linear-gradient(315deg, #FDFDFD 0%, #C3E9D2 34%, #C3E9D2 78%, #FDFDFD 100%)',
+        create: 'linear-gradient(180deg, #C3E9D2 0%, #FDFDFD 20%, #FDFDFD 80%, #C3E9D2 90%)',
       }
     },
   },
