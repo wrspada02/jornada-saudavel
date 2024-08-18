@@ -45,7 +45,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
     if (!success || !type || !action) return;
 
     toast({
-      title: `${success ? 'Success' : 'Error'} on ${action} ${type}`,
+      title: `${success ? 'Successo' : 'Error'} na ${action} ${type}`,
     });
   }, [success, type, action]);
   

@@ -52,7 +52,7 @@ export default function NutricionistProfile({ nutricionist }: InferGetStaticProp
 
         <section className="mt-5 max-w-full break-all">
           <h2 className="mb-6 text-xl font-bold">CRN</h2>
-          <p className="text-base">{nutricionist?.crn} anos</p>
+          <p className="text-base">{nutricionist?.crn}</p>
         </section>
 
         <section className="mt-5 max-w-full break-all">

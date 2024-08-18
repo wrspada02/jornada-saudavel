@@ -44,7 +44,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
     };
 
     const postNutricionistUser = async (data: NutricionistUser) => {
-        return await fetch('/api/comum/create', {
+        return await fetch('/api/nutricionist/create', {
             body: JSON.stringify(data),
             method: 'POST',
         }).then(data => data.json());
@@ -103,7 +103,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
 
     const handleCreateUser = useCallback(async () => {
         if (!userPayload) return;
-        
+
         if (isComumUser(userPayload)) createComumUser(userPayload);
         else createNutricionistUser(userPayload);
     }, [userPayload]);

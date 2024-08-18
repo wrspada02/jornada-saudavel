@@ -46,7 +46,7 @@ export function LastStage({ onSubmit }: LastStageProps) {
                     name="tempo_exp"
                     render={({ field }) => (
                         <FormItem className="my-5">
-                            <FormLabel>Tempo de experiência</FormLabel>
+                            <FormLabel>Tempo de experiência em anos</FormLabel>
                             <FormControl>
                                 <Input className="max-w-[500px]" placeholder="Digite seu tempo de experiência..." {...field} />
                             </FormControl>
