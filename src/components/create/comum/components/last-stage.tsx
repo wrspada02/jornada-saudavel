@@ -7,15 +7,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const FormSchema = z.object({
-    frequencia_atividade: z.string({
-        required_error: 'O campo frequência atividade é obrigatório',
-    }),
-    objetivo_id: z.string({
-        required_error: 'O campo objetivo é obrigatório',
-    }),
-    tipo_atividade: z.string({
-        required_error: 'O campo tipo de atividade é obrigatório',
-    }),
+    frequencia_atividade: z.coerce.number({ message: 'Deve ser um número' }).min(0, { message: 'Frequência deve ser maior ou igual a 0' }).max(7, { message: 'Frequência deve ser menor ou igual a 7 '}),
+    objetivo_id: z.string().uuid({ message: 'Deve ser um válido objetivo selecionado' }),
+    tipo_atividade: z.string().min(1, { message: 'Deve inserir um tipo de atividade' }),
 });
 
 interface LastStageProps {
@@ -25,20 +19,10 @@ interface LastStageProps {
 export function LastStage({ onSubmit }: LastStageProps) {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
-        defaultValues: {
-            frequencia_atividade: '',
-            objetivo_id: '',
-            tipo_atividade: '',
-        }
     });
 
     function onSubmitForm(values: z.infer<typeof FormSchema>) {
-        const data: Pick<ComumUser, 'frequencia_atividade' | 'objetivo_id' | 'tipo_atividade'> = {
-            ...values,
-            frequencia_atividade: parseInt(values.frequencia_atividade),
-        };
-
-        onSubmit(data);
+        onSubmit(values);
     };
 
     return (
@@ -63,7 +47,7 @@ export function LastStage({ onSubmit }: LastStageProps) {
                     name="objetivo_id"
                     render={({ field }) => (
                         <FormItem className="mb-5">
-                            <FormLabel>Peso</FormLabel>
+                            <FormLabel>Objetivo</FormLabel>
                             <FormControl>
                                 <Input className="max-w-[500px]" placeholder="Digite seu objetivo id" {...field} />
                             </FormControl>

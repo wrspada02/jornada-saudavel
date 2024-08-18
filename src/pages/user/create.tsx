@@ -50,7 +50,7 @@ export default function CreateUser() {
         if(userPayload && !isComumUser(userPayload)) return;
 
         // create user
-
+        console.log(userPayload);
     }, [userPayload]);
 
     useEffect(() => {
