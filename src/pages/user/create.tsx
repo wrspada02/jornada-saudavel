@@ -80,9 +80,9 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
         });
 
         if (result) {
-            router.push('/?success=true&user');
+            router.push('/?success=true&type=user&action=create');
         } else {
-            router.push('/?success=false&user');
+            router.push('/?success=false&type=user&action=create');
         }
     }, [userPayload]);
 

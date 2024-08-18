@@ -7,13 +7,18 @@ import { Header } from "@/components/Header";
 import { PostCard } from "@/components/PostCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import prisma from "@/lib/prisma";
+import { useEffect } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
+import { Toaster } from "@/components/ui/toaster";
 
 interface HomePageProps {
   posts: Post[];
   nutricionists: Nutricionista[];
 }
 
-export const getStaticProps = (async (context) => {
+export const getStaticProps = (async (_) => {
   const [posts, nutricionists] = await Promise.all(
     [
       prisma.post.findMany({
@@ -32,6 +37,17 @@ export const getStaticProps = (async (context) => {
 }) satisfies GetStaticProps<HomePageProps>;
 
 export default function Home({ nutricionists, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { toast } = useToast();
+  const router = useRouter();
+  const { success, type, action } = router.query;
+
+  useEffect(() => {
+    if (!success || !type || !action) return;
+
+    toast({
+      title: `${success ? 'Success' : 'Error'} on ${action} ${type}`,
+    });
+  }, [success, type, action]);
   return (
     <>
       <Header />
@@ -74,6 +90,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
         </section>
       </main>
       <Footer />
+      <Toaster />
     </>
   );
 }
