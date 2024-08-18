@@ -48,6 +48,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
       title: `${success ? 'Success' : 'Error'} on ${action} ${type}`,
     });
   }, [success, type, action]);
+  
   return (
     <>
       <Header />

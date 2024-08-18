@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComumUser } from "./interfaces/ComumUser";
-import { FirstStage } from "./comum/components/first-stage";
-import { LastStage } from "./comum/components/last-stage";
+import { ComumUser } from "../../interfaces/ComumUser";
+import { FirstStage } from "./first-stage";
+import { LastStage } from "./last-stage";
 import { ObjetivoEspecialidade } from "@prisma/client";
 
 interface ComumFormProps {

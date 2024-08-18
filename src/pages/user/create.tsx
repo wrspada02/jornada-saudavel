@@ -1,6 +1,8 @@
 import { ChooseUser } from "@/components/create/choose-user";
-import { ComumForm } from "@/components/create/comum-form";
+import { ComumForm } from "@/components/create/comum/components/comum-form";
 import { ComumUser } from "@/components/create/interfaces/ComumUser";
+import { NutricionistUser } from "@/components/create/interfaces/NutricionistUser";
+import { NutricionistForm } from "@/components/create/nutricionist/components/nutricionist-form";
 import prisma from "@/lib/prisma";
 import { useUser } from "@clerk/nextjs";
 import { ObjetivoEspecialidade } from "@prisma/client";
@@ -11,14 +13,6 @@ import React, { useCallback, useEffect, useState } from "react";
 interface CreateUserStage {
     level: number;
     type: 'c' | 'n' | null;
-}
-
-interface NutricionistUser {
-    crn: string;
-    nome: string;
-    sobre: string;
-    email: string;
-    data_nasc: string;
 }
 
 interface CreateComumUserProps {
@@ -41,7 +35,15 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
         type: null,
     });
     const [userPayload, setUserPayload] = useState<UserPayload | null>(null);
+
     const postComumUser = async (data: ComumUser) => {
+        return await fetch('/api/comum/create', {
+            body: JSON.stringify(data),
+            method: 'POST',
+        }).then(data => data.json());
+    };
+
+    const postNutricionistUser = async (data: NutricionistUser) => {
         return await fetch('/api/comum/create', {
             body: JSON.stringify(data),
             method: 'POST',
@@ -50,7 +52,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
 
     const FormUserMap: Record<'c' | 'n', JSX.Element> = {
         'c': <ComumForm goalsEspecialities={goalEspecialities} onSubmit={(values: ComumUser) => { setUserPayload(values); }} />,
-        'n': <></>,
+        'n': <NutricionistForm goalsEspecialities={goalEspecialities} onSubmit={(values: NutricionistUser) => { setUserPayload(values); }} />,
     };
 
     const CreateUserMap: Record<number, JSX.Element> = {
@@ -69,9 +71,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
         return (user as ComumUser).frequencia_atividade !== undefined;
     }
 
-    const handleSubmitCreateComumUser = useCallback(async () => {
-        if (!userPayload || !isComumUser(userPayload)) return;
-
+    const createComumUser = async (userPayload: ComumUser) => {
         const result = await postComumUser({
             ...userPayload,
             email: user?.primaryEmailAddress?.emailAddress || '',
@@ -80,14 +80,36 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
         });
 
         if (result) {
-            router.push('/?success=true&type=user&action=create');
+            router.push('/?success=true&type=usuario&action=criacao');
         } else {
-            router.push('/?success=false&type=user&action=create');
+            router.push('/?success=false&type=usuario&action=criacao');
         }
+    };
+
+    const createNutricionistUser = async (userPayload: NutricionistUser) => {
+        const result = await postNutricionistUser({
+            ...userPayload,
+            email: user?.primaryEmailAddress?.emailAddress || '',
+            nome: user?.fullName || '',
+            data_nasc: new Date(userPayload.data_nasc).toISOString(),
+        });
+
+        if (result) {
+            router.push('/?success=true&type=nutricionista&action=criacao');
+        } else {
+            router.push('/?success=false&type=nutricionista&action=criacao');
+        }
+    };
+
+    const handleCreateUser = useCallback(async () => {
+        if (!userPayload) return;
+        
+        if (isComumUser(userPayload)) createComumUser(userPayload);
+        else createNutricionistUser(userPayload);
     }, [userPayload]);
 
     useEffect(() => {
-        handleSubmitCreateComumUser();
+        handleCreateUser();
     }, [userPayload]);
     
     return CreateUserMap[stage.level];
