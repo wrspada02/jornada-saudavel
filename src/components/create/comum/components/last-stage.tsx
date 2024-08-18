@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Dropdown } from "@/components/Dropdown";
+import { ObjetivoEspecialidade } from "@prisma/client";
 
 const FormSchema = z.object({
     frequencia_atividade: z.coerce.number({ message: 'Deve ser um número' }).min(0, { message: 'Frequência deve ser maior ou igual a 0' }).max(7, { message: 'Frequência deve ser menor ou igual a 7 '}),
@@ -14,9 +16,10 @@ const FormSchema = z.object({
 
 interface LastStageProps {
     onSubmit(values: Pick<ComumUser, 'frequencia_atividade' | 'objetivo_id' | 'tipo_atividade'>): void;
+    goalsEspecialities: ObjetivoEspecialidade[];
 }
 
-export function LastStage({ onSubmit }: LastStageProps) {
+export function LastStage({ onSubmit, goalsEspecialities }: LastStageProps) {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     });
@@ -47,9 +50,15 @@ export function LastStage({ onSubmit }: LastStageProps) {
                     name="objetivo_id"
                     render={({ field }) => (
                         <FormItem className="mb-5">
-                            <FormLabel>Objetivo</FormLabel>
+                            <FormLabel className="block">Objetivo</FormLabel>
                             <FormControl>
-                                <Input className="max-w-[500px]" placeholder="Digite seu objetivo id" {...field} />
+                                <Dropdown 
+                                    data={goalsEspecialities} 
+                                    value={field.value} 
+                                    onChange={(value) => {
+                                        form.setValue('objetivo_id', value);
+                                    }} 
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>

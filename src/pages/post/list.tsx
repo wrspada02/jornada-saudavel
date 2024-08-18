@@ -33,7 +33,7 @@ export const getStaticProps = (async () => {
 export default function PostList({ postCount }: InferGetStaticPropsType<typeof getStaticProps>) {
     const queryParam = useSearchParams();
     const { data, error, isLoading } = useSWR<Post[]>
-        (`/api/posts?offset=${queryParam?.get('offset') || 0}`, fetcher);
+        (`/api/post/pagination?offset=${queryParam?.get('offset') || 0}`, fetcher);
     return (
         <main className="flex flex-col h-screen">
             <Header />

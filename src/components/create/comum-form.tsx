@@ -2,9 +2,11 @@ import { useState } from "react";
 import { ComumUser } from "./interfaces/ComumUser";
 import { FirstStage } from "./comum/components/first-stage";
 import { LastStage } from "./comum/components/last-stage";
+import { ObjetivoEspecialidade } from "@prisma/client";
 
 interface ComumFormProps {
     onSubmit(values: ComumUser): void;
+    goalsEspecialities: ObjetivoEspecialidade[];
 }
 
 interface FormProps {
@@ -16,7 +18,7 @@ type FirstStageProps = Pick<ComumUser, 'altura' | 'data_nasc' | 'peso'>;
 
 type LastStageProps = Pick<ComumUser, 'frequencia_atividade' | 'objetivo_id' | 'tipo_atividade'>;
 
-export function ComumForm({ onSubmit }: ComumFormProps) {
+export function ComumForm({ onSubmit, goalsEspecialities }: ComumFormProps) {
     const [form, setForm] = useState<FormProps>({
         data: {
             altura: 0,
@@ -44,7 +46,7 @@ export function ComumForm({ onSubmit }: ComumFormProps) {
 
             setForm(prev => ({ data, stage: prev.stage+1 }));
             onSubmit(data);
-        }} />,
+        }} goalsEspecialities={goalsEspecialities} />,
     };
 
     return ComumFormMap[form.stage];

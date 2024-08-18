@@ -13,6 +13,7 @@ const main = async () => {
     await prisma.usuario.upsert({
       create: {
         data_nasc: faker.date.past(10),
+        email: faker.internet.email(),
         nome: faker.person.fullName(),
         tipo_atividade: faker.string.alpha(),
         altura: faker.number.float(),
@@ -33,6 +34,7 @@ const main = async () => {
                 nutricionista: {
                   create: {
                     crn: faker.string.alphanumeric({ length: 300 }),
+                    email: faker.internet.email(),
                     data_nasc: faker.date.past(20),
                     nome: faker.person.fullName(),
                     sobre: faker.string.alpha({ length: 300 }),

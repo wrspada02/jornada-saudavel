@@ -34,7 +34,7 @@ export const getStaticProps = (async () => {
 export default function NutricionistList({ nutricionistCount }: InferGetStaticPropsType<typeof getStaticProps>) {
     const queryParam = useSearchParams();
     const { data, error, isLoading } = useSWR<Nutricionista[]>
-        (`/api/nutricionists?offset=${queryParam?.get('offset') || 0}`, fetcher);
+        (`/api/nutricionist/pagination?offset=${queryParam?.get('offset') || 0}`, fetcher);
 
     return (
         <main className="flex flex-col h-screen">
