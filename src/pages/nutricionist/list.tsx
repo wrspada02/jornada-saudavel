@@ -49,9 +49,9 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
                             {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
                                 <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
                             )) : data?.map(n => (
-                                <li key={n.id} className="mt-7 cursor-pointer w-fit max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words">
+                                <li key={n.id} className="mobile:w-fit tablet:w-fit p-5 w-[600px] max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
                                     <Link href={`/nutricionist/${n.id}`}>
-                                        <figure className="flex items-center gap-x-3 w-fit p-3 cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                        <figure className="flex items-center gap-x-3">
                                             <Image src={n.imagem_url || ''} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
                                             <figcaption>
                                                 <h3 className="font-medium text-base">{n.nome}</h3>
