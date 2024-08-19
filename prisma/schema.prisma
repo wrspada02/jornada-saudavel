@@ -67,10 +67,10 @@ model Post {
   titulo           String
   subtitulo        String
   conteudo         String
-  data_publicacao  DateTime
+  data_publicacao  DateTime      @default(now())
   imagem_url       String?       @default("https://archive.org/download/placeholder-image/placeholder-image.jpg")
-  qtd_likes        Int
-  qtd_comentarios  Int
+  qtd_likes        Int           @default(0)
+  qtd_comentarios  Int           @default(0)
   nutricionista    Nutricionista @relation(fields: [nutricionista_id], references: [id])
   nutricionista_id String
   comentarios      Comentario[]
