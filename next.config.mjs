@@ -4,6 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: 'archive.org',
+      },
+      {
+        hostname: 'img.clerk.com',
       }
     ]
   }

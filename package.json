@@ -10,7 +10,7 @@
     "dev:migrate": "npx prisma migrate dev"
   },
   "prisma": {
-    "seed": "npx tsx prisma/seed/dev-seed.ts"
+    "seed": "npx tsx prisma/seed/prod-seed.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.3.1",

@@ -55,7 +55,7 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
       <Header />
       <main className="px-3 h-screen py-6 bg-[#FDFDFD]">
         <section>
-          <h1 className="text-xl font-bold">Confira o que os nutricionistas estão postando</h1>
+          <h1 className="pl-3 text-xl font-bold">Confira o que os nutricionistas estão postando</h1>
           {posts.length > 0 ? (
             <ul className="py-3">
               {posts.map(p => (
@@ -78,12 +78,12 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
               <Carousel opts={{
                 align: 'start'
               }}>
-                <CarouselContent className="p-5">
+                <CarouselContent className="p-5 min-w-[700px]">
                   {nutricionists.map(n => (
                     <CarouselItem key={n.id} className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
                       <Link href={`/nutricionist/${n.id}`}>
                         <figure className="flex flex-col items-center justify-center">
-                          <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                          <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full max-w-[auto]" alt="Nutricionista profile picture" />
                           <figcaption className="font-medium text-sm text-center">{n.nome}</figcaption>
                         </figure>
                       </Link>
