@@ -11,6 +11,7 @@ import useSWR from "swr";
 import { Nutricionista } from "@prisma/client";
 import { ITEMS_PER_PAGE } from "@/global/pagination";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ErrorMessage } from "@/components/ErrorMessage";
 
 interface NutricionistListProps {
     nutricionistCount: number;
@@ -45,29 +46,33 @@ export default function NutricionistList({ nutricionistCount }: InferGetStaticPr
                 ) : (
                     <>
                         <h1 className="font-bold text-xl mb-6 pl-3">Nutricionistas</h1>
-                        <ul className="overflow-auto break-all min-h-[75vh]">
-                            {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
-                                <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
-                            )) : data?.map(n => (
-                                <li key={n.id} className="mobile:w-fit tablet:w-fit p-5 w-[600px] max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
-                                    <Link href={`/nutricionist/${n.id}`}>
-                                        <figure className="flex items-center gap-x-3">
-                                            <Image src={n.imagem_url || ''} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                                            <figcaption>
-                                                <h3 className="font-medium text-base">{n.nome}</h3>
-                                                <p className="mt-1 text-sm max-w-lg">
-                                                    {n.sobre.length > 100 ? n.sobre.substring(0, 100).concat('...') : n.sobre}
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        {data && data.length > 0 ? (
+                            <ul className="overflow-auto break-all min-h-[75vh]">
+                                {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                                    <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
+                                )) : data?.map(n => (
+                                    <li key={n.id} className="mobile:w-fit tablet:w-fit p-5 w-[600px] max-w-full desktop:min-w-96 fullscreen:min-w-96 break-words cursor-pointer hover:border hover:border-[#FDFDFD] hover:shadow-md hover:transition hover:duration-150 ease-in-out">
+                                        <Link href={`/nutricionist/${n.id}`}>
+                                            <figure className="flex items-center gap-x-3">
+                                                <Image src={n.imagem_url || ''} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                                                <figcaption>
+                                                    <h3 className="font-medium text-base">{n.nome}</h3>
+                                                    <p className="mt-1 text-sm max-w-lg">
+                                                        {n.sobre.length > 100 ? n.sobre.substring(0, 100).concat('...') : n.sobre}
+                                                    </p>
+                                                </figcaption>
+                                            </figure>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : <ErrorMessage />}
                     </>
                 )}
             </section>
-            <Pagination count={nutricionistCount} />
+            {data && data.length > 0 && (
+                <Pagination count={nutricionistCount} />
+            )}
             <Footer />
         </main>
     );

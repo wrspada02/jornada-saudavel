@@ -78,6 +78,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
             ...userPayload,
             email: user?.primaryEmailAddress?.emailAddress || '',
             nome: user?.fullName || '',
+            imagem_url: user?.imageUrl || '',
             data_nasc: new Date(userPayload.data_nasc).toISOString(),
         });
 
@@ -93,6 +94,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
             ...userPayload,
             email: user?.primaryEmailAddress?.emailAddress || '',
             nome: user?.fullName || '',
+            imagem_url: user?.imageUrl,
             data_nasc: new Date(userPayload.data_nasc).toISOString(),
         });
 

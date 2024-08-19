@@ -1,0 +1,27 @@
+version: '3.5'
+services:
+  project:
+    build: .
+    container_name: project
+    env_file: .env
+    hostname: project
+    networks:
+      - app-network
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run dev:migrate && npm run dev'
+
+  db:
+    image: postgres:16.3
+    restart: always
+    container_name: db
+    env_file: .env
+    hostname: db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/router";
+import { ErrorMessage } from "@/components/ErrorMessage";
 
 interface PostListProps {
     postCount: number;
@@ -84,20 +85,24 @@ export default function PostList({ postCount }: InferGetStaticPropsType<typeof g
                             {!!userDb && (
                                 <Link href={'/post/create'} className="p-3 bg-[#c3e9d2] rounded-md hover:shadow-md hover:transition hover:duration-150 ease-in-out">Criar publicação</Link>
                             )}
-                        </header>                    
-                        <ul className="break-all min-h-[75vh]">
-                        {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
-                                <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
-                            )) : data?.map(p => (
-                                <li key={p.id} className="cursor-pointer">
-                                    <PostCard post={p} />
-                                </li>
-                            ))}
-                        </ul>
+                        </header>
+                        {data && data.length > 0 ? (
+                            <ul className="break-all min-h-[75vh]">
+                            {isLoading ? Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                                    <Skeleton key={index} className="mt-7 w-[400px] h-[80px] rounded-lg ml-3" />
+                                )) : data?.map(p => (
+                                    <li key={p.id} className="cursor-pointer">
+                                        <PostCard post={p} />
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : <ErrorMessage />}                   
                     </>
                 )}
             </section>
-            <Pagination count={postCount} />
+            {data && data?.length > 0 && (
+                <Pagination count={postCount} />
+            )}
             <Footer />
         </main>
     );

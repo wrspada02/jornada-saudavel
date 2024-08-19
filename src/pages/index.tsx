@@ -12,6 +12,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/router";
 import { useSearchParams } from "next/navigation";
 import { Toaster } from "@/components/ui/toaster";
+import { ErrorMessage } from "@/components/ErrorMessage";
 
 interface HomePageProps {
   posts: Post[];
@@ -52,42 +53,48 @@ export default function Home({ nutricionists, posts }: InferGetStaticPropsType<t
   return (
     <>
       <Header />
-      <main className="px-3 py-6 bg-[#FDFDFD]">
+      <main className="px-3 h-screen py-6 bg-[#FDFDFD]">
         <section>
-          <h1 className="text-xl font-bold pl-3">Confira o que os nutricionistas estão postando</h1>
-          <ul className="py-3">
-            {posts.map(p => (
-              <li key={p.id}>
-                <PostCard post={p} />
-              </li>
-            ))}
-          </ul>
-          <footer className="text-base font-medium text-left mobile:text-right my-4 pl-3">
-            <Link href={'/post/list'}>Veja mais...</Link>
-          </footer>
+          <h1 className="text-xl font-bold">Confira o que os nutricionistas estão postando</h1>
+          {posts.length > 0 ? (
+            <ul className="py-3">
+              {posts.map(p => (
+                <li key={p.id}>
+                  <PostCard post={p} />
+                </li>
+              ))}
+            </ul>
+          ) : <ErrorMessage />}
+          {posts.length > 0 && (
+            <footer className="text-base font-medium text-left mobile:text-right my-4 pl-3">
+              <Link href={'/post/list'}>Veja mais...</Link>
+            </footer>
+          )}
         </section>
         <section>
           <h2 className="font-bold text-xl text-center mb-14 mt-12">Conheça nossos especialistas</h2>
-          <article className="flex items-center justify-center gap-x-8 overflow-x-hidden">
-            <Carousel opts={{
-              align: 'start'
-            }}>
-              <CarouselContent className="p-5">
-                {nutricionists.map(n => (
-                  <CarouselItem key={n.id} className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
-                    <Link href={`/nutricionist/${n.id}`}>
-                      <figure className="flex flex-col items-center justify-center">
-                        <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
-                        <figcaption className="font-medium text-sm text-center">{n.nome}</figcaption>
-                      </figure>
-                    </Link>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </article>
+          {nutricionists.length > 0 ? (
+            <article className="flex items-center justify-center gap-x-8 overflow-x-hidden">
+              <Carousel opts={{
+                align: 'start'
+              }}>
+                <CarouselContent className="p-5">
+                  {nutricionists.map(n => (
+                    <CarouselItem key={n.id} className="mobile:basis-1/3 basis-1/5 cursor-pointer hover:-translate-y-1 transition duration-500">
+                      <Link href={`/nutricionist/${n.id}`}>
+                        <figure className="flex flex-col items-center justify-center">
+                          <Image src={String(n.imagem_url)} width={70} height={70} className="rounded-full" alt="Nutricionista profile picture" />
+                          <figcaption className="font-medium text-sm text-center">{n.nome}</figcaption>
+                        </figure>
+                      </Link>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </article>
+          ) : <ErrorMessage />}
         </section>
       </main>
       <Footer />
