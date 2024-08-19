@@ -3,6 +3,7 @@ import { ComumForm } from "@/components/create/comum/components/comum-form";
 import { ComumUser } from "@/components/create/interfaces/ComumUser";
 import { NutricionistUser } from "@/components/create/interfaces/NutricionistUser";
 import { NutricionistForm } from "@/components/create/nutricionist/components/nutricionist-form";
+import { Loading } from "@/components/Loading";
 import prisma from "@/lib/prisma";
 import { useUser } from "@clerk/nextjs";
 import { ObjetivoEspecialidade } from "@prisma/client";
@@ -58,6 +59,7 @@ export default function CreateUser({ goalEspecialities }: InferGetStaticPropsTyp
     const CreateUserMap: Record<number, JSX.Element> = {
         1: <ChooseUser onSubmit={onChooseUserSubmit} />,
         2: FormUserMap[stage.type as | 'c' | 'n'],
+        3: <Loading />,
     };
 
     function onChooseUserSubmit(type: 'c' | 'n') {

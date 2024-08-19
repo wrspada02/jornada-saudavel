@@ -1,13 +1,36 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
-import { Post } from "@prisma/client";
+import { Comentario, Post, Usuario } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { useUser } from "@clerk/nextjs";
+import { Textarea } from "@/components/ui/textarea";
+import { FormProvider, useForm } from "react-hook-form";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { useCallback, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 interface PostPublicationProps {
   post: Post | null;
 };
+
+const FormSchema = z.object({
+  conteudo: z.string().min(1, { message: 'Requirido alguma mensagem'}).max(200, { message: 'Máximo de 200 caracteres' }),
+});
+
+const fetcher = (url: string) => fetch(url, {
+  method:'GET',
+  headers:{ "Content-Type" : "applicaton/json" },
+}).then(async res => {
+  const { user } = await res.json();
+
+  return user;
+});
 
 export const getStaticProps = (async ({ params }) => {
   const post = await prisma.post
@@ -24,6 +47,40 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths<{ id: string }>;
 
 export default function PostPublication({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { user } = useUser(); 
+  const { data: userDb, mutate } = useSWR<Usuario>
+    (`/api/comum/getByEmail?email=${user?.primaryEmailAddress?.emailAddress}`, fetcher);
+  const router = useRouter();
+
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+  });
+
+  const onSubmit = useCallback(async ({ conteudo }: Pick<Comentario, 'conteudo'>) => {
+    if (!userDb) return;
+    
+    const data: Pick<Comentario, 'conteudo' | 'post_id' | 'usuario_id'> = {
+      conteudo,
+      post_id: post.id,
+      usuario_id: userDb.id,
+    };
+
+    const createdComment = await fetch('/api/comment/create', {
+      body: JSON.stringify(data),
+      method: 'POST',
+    });
+
+    if (createdComment) {
+      router.push(`/post/${post.id}?success=true&type=comentario&action=criacao`);
+    } else {
+      router.push(`/post/${post.id}?success=false&type=comentario&action=criacao`);
+    }
+  }, [userDb]);
+
+  useEffect(() => {
+    mutate();
+  }, [user]);
+
   return (
     <main className="flex flex-col h-screen">
       <Header />
@@ -67,6 +124,31 @@ export default function PostPublication({ post }: InferGetStaticPropsType<typeof
                 </figure>
               </li>
             ))}
+
+            {!!userDb && !post?.comentarios.find((c: any) => c.usuario.id === userDb.id) && (
+              <FormProvider {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)}>
+                  <FormField
+                    name="conteudo"
+                    control={form.control}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Digite seu comentário</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            className="max-w-[500px]"
+                            placeholder="Digite seu comentário..."
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                <Button className="mt-10 max-w-[300px] bg-[#C3E9D2]" type="submit">Continuar</Button>
+                </form>
+              </FormProvider>
+            )}
           </ul>
         </section>
       </section>

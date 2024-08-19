@@ -34,6 +34,7 @@ export default function PostList({ postCount }: InferGetStaticPropsType<typeof g
     const queryParam = useSearchParams();
     const { data, error, isLoading } = useSWR<Post[]>
         (`/api/post/pagination?offset=${queryParam?.get('offset') || 0}`, fetcher);
+        
     return (
         <main className="flex flex-col h-screen">
             <Header />
