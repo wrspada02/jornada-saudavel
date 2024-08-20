@@ -34,4 +34,4 @@ Arquitetura do sistema
 Este projeto foi desenvolvido em metodologia cascata, criando, em um primeiro momento, a documentação do projeto, logo, a prototipação e finalmente testes, codificação e implantação.
 
 ## Tecnologias
-React, Next.js e Typescript.
+React, Next.js, Docker, TailwindCSS e Typescript.
